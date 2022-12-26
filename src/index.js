@@ -1,1 +1,3 @@
-console.log('Script is working!');
+import genWebsite from './website';
+
+genWebsite();

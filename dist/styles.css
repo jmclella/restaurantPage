@@ -1,0 +1,118 @@
+:root {
+    --background-color: #2b2b2b;
+    --button-hover: #4b4b4b;
+    --text-color: #fff;
+}
+
+::before,
+::after,
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body {
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-color);
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 175px minmax(475px, 1fr) 75px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+    background-color: var(--background-color);
+    color: inherit;
+    opacity: .9;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 75px;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+header > h1 {
+    font-size: 2.2rem;
+}
+
+
+nav {
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.nav-element {
+    border: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.nav-element:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+
+.nav-element.selected {
+    border-bottom: 4px solid var(--text-color);
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+.main-container {
+    width: clamp(400px, 80%, 750px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-hover);
+    opacity: .9;
+    border: 2px solid var(--text-color);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+footer {
+    background-color: var(--background-color);
+    color: inherit;
+    opacity: .9;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
