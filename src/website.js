@@ -1,3 +1,7 @@
+import loadHome from './home';
+import loadMenu from './menu';
+import loadAbout from './about';
+
 function createHeader() {
     const pageHeader = document.createElement('header');
 
@@ -21,7 +25,7 @@ function createNav() {
     homeButton.addEventListener('click', (e) => {
         if (e.target.classList.contains('selected')) return;
         setActiveButton(homeButton);
-        // loadHome();
+        loadHome();
     });
 
     const menuButton = document.createElement('button');
@@ -31,8 +35,7 @@ function createNav() {
     menuButton.addEventListener('click', (e) => {
         if (e.target.classList.contains('selected')) return;
         setActiveButton(menuButton);
-
-        // loadMenu();
+        loadMenu();
     });
 
     const aboutButton = document.createElement('button');
@@ -42,7 +45,7 @@ function createNav() {
     aboutButton.addEventListener('click', (e) => {
         if (e.target.classList.contains('selected')) return;
         setActiveButton(aboutButton);
-        // loadAbout();
+        loadAbout();
     });
 
     pageNav.appendChild(homeButton);
@@ -67,13 +70,11 @@ function setActiveButton(button) {
 
 function createMain() {
     const pageMain = document.createElement('main');
+    pageMain.classList.add('main');
     const mainContent = document.createElement('div');
     mainContent.classList.add('main-container');
 
-    const testPar = document.createElement('p')
-    testPar.textContent = 'Testing Testing Testing';
-
-    mainContent.appendChild(testPar);
+    mainContent.textContent = 'Testing Testing';
 
     pageMain.appendChild(mainContent);
 
@@ -99,7 +100,7 @@ function genWebsite() {
 
     setActiveButton(document.querySelector(".nav-element"));
 
-    // Default loadHome();
+    loadHome();
 };
 
 export default genWebsite;
